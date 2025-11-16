@@ -14,6 +14,7 @@ profile:
       <p> Advanced Genomics Lab</p>
       <p> Medical College of Wisconsin</p>
       <p> Milwaukee, WI</p>
+      <p> </p>
     </div>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
