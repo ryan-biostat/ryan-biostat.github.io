@@ -40,7 +40,7 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-{ % comment % }
+{% comment %}
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
@@ -65,7 +65,7 @@ layout: default
       {% include selected_papers.liquid %}
     {% endif %}
 
-{ % endcomment % }
+{% endcomment %}
 
     <!-- Social -->
     {% if page.social %}
