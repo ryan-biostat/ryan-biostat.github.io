@@ -1,6 +1,6 @@
 ---
 layout: page
-title: EMRs for Pediatric Research
+title: EMR Data for Pediatric Research
 description: investigating health disparities among children with Sickle Cell Disease
 img: assets/img/sickle_cell.jpg
 importance: 2
@@ -15,7 +15,7 @@ To give your project a background in the portfolio page, just add the img tag to
 
     ---
     layout: page
-    title: EMRs for Pediatric Research
+    title: EMR Data for Pediatric Research
     description: investigating health disparities among children with Sickle Cell Disease
     img: /assets/img/sickle_cell.jpg
     ---
