@@ -445,7 +445,7 @@ ninja.data = [{
               window.location.href = "/projects/9_project/";
             },},{id: "projects-cap-lab-instrument-qc-report",
           title: 'CAP Lab Instrument QC Report',
-          description: "statistical reporting for measuring instrument performance",
+          description: "statistical reporting via RMarkdown for measuring instrument performance",
           section: "Projects",handler: () => {
               window.location.href = "/projects/CAP-Reporting/";
             },},{id: "projects-differential-expression-analysis",
@@ -463,8 +463,8 @@ ninja.data = [{
           description: "customized for Whole Genomes on Oxford Nanopore Long-Read Platforms",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ONT_pipeline/";
-            },},{id: "projects-emrs-for-pediatric-research",
-          title: 'EMRs for Pediatric Research',
+            },},{id: "projects-emr-data-for-pediatric-research",
+          title: 'EMR Data for Pediatric Research',
           description: "investigating health disparities among children with Sickle Cell Disease",
           section: "Projects",handler: () => {
               window.location.href = "/projects/SCD/";
