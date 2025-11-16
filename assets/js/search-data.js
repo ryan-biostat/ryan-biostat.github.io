@@ -423,17 +423,7 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-custom-whole-genome-long-read-sequencing-pipeline",
-          title: 'Custom Whole Genome Long-Read Sequencing Pipeline',
-          description: "for Oxford Nanopore Long-Read Platforms",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
+          section: "News",},{id: "projects-project-3-with-very-long-name",
           title: 'project 3 with very long name',
           description: "a project that redirects to another website",
           section: "Projects",handler: () => {
@@ -468,6 +458,16 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-hybrid-genome-assembly-pipeline",
+          title: 'Hybrid Genome Assembly Pipeline',
+          description: "Combining ONT Long-Read Sequencing and Bionano Optical Genome Mapping for highly contiguous whole genome assemblies.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/Hybrid/";
+            },},{id: "projects-custom-whole-genome-long-read-sequencing-pipeline",
+          title: 'Custom Whole Genome Long-Read Sequencing Pipeline',
+          description: "for Oxford Nanopore Long-Read Platforms",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/ONT_pipeline/";
             },},{
         id: 'social-email',
         title: 'email',
