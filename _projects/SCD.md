@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 5
-description: a project with a background image
-img: assets/img/1.jpg
+title: EMRs for Pediatric Research
+description: investigating health disparities among children with Sickle Cell Disease
+img: assets/img/sickle_cell.jpg
 importance: 3
-category: fun
+category: Biostatistics
 ---
 
 Every project has a beautiful feature showcase page.
@@ -15,9 +15,9 @@ To give your project a background in the portfolio page, just add the img tag to
 
     ---
     layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
+    title: EMRs for Pediatric Research
+    description: investigating health disparities among children with Sickle Cell Disease
+    img: /assets/img/sickle_cell.jpg
     ---
 
 <div class="row">

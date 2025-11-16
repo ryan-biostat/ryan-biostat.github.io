@@ -4,7 +4,7 @@ title: CAP Lab Instrument QC Report
 description: statistical reporting for measuring instrument performance
 img: /assets/img/lab_report.png
 importance: 3
-category: fun
+category: Biostatistics
 ---
 
 Every project has a beautiful feature showcase page.
@@ -15,7 +15,7 @@ To give your project a background in the portfolio page, just add the img tag to
 
     ---
     layout: page
-    title: CAP Lab Instrument QC Report 
+    title: CAP Lab Instrument QC Report
     description: statistical reporting for measuing instrument performance
     img: /assets/img/lab_report.png
     ---
