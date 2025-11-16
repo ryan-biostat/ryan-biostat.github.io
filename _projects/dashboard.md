@@ -2,7 +2,7 @@
 layout: page
 title: Lab Sample Dashboard
 description: a Python + JavaScript dashboard for tracking whole genome samples as they process from lab to analysis
-img:
+img: /assets/img/charts.jpg
 importance: 2
 category: Biostatistics
 ---
@@ -19,7 +19,7 @@ To give your project a background in the portfolio page, just add the img tag to
     layout: page
     title: Lab Sample Dashboard
     description: a Python + JavaScript dashboard for tracking whole genome samples as they process from lab to analysis
-    img: /assets/img/12.jpg
+    img: /assets/img/charts.jpg
     ---
 
 <div class="row">
