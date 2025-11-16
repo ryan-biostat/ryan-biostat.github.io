@@ -1,10 +1,10 @@
 ---
 layout: page
-title: project 2
-description: a project with a background image and giscus comments
-img: assets/img/3.jpg
+title: Hybrid Genome Assembly Pipeline
+description: Combining ONT Long-Read Sequencing and Bionano Optical Genome Mapping for highly contiguous whole genome assemblies.
+img: assets/img/dna_background.jpg
 importance: 2
-category: work
+category: Bioinformatics
 giscus_comments: true
 ---
 
@@ -16,9 +16,9 @@ To give your project a background in the portfolio page, just add the img tag to
 
     ---
     layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
+    title: Hybrid Genome Assembly Pipeline
+    description: Combining ONT Long-Read Sequencing and Bionano Optical Genome Mapping for highly contiguous whole genome assemblies.
+    img: /assets/img/dna_background.jpg
     ---
 
 <div class="row">

@@ -4,7 +4,7 @@ title: Custom Whole Genome Long-Read Sequencing Pipeline
 description: for Oxford Nanopore Long-Read Platforms
 img: assets/img/dna_sequencing.jpg
 importance: 1
-category: work
+category: Bioinformatics
 related_publications: true
 ---
 
