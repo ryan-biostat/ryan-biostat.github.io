@@ -29,7 +29,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hello! I’m Ryan Gallagher. Welcome to my academic homepage, where you can learn more about my background, projects, research interests, and contributions in biostatistics and bioinformatics.
+Hello! **Welcome** to my academic homepage, where you can learn more about my background, projects, research interests, and contributions in biostatistics and bioinformatics.
 
 I am currently a Biostatistician in Dr. Ulrich Broeckel’s Advanced Genomics Lab at the Medical College of Wisconsin / Children’s Wisconsin. Our work focuses on identifying rare, disease-causing structural variants in the human genome using Oxford Nanopore Long-Read Sequencing (LRS) and Bionano Optical Genome Mapping (OGM). My role involves processing, annotating, and analyzing human genomes (typically from undiagnosed patient samples) for rare variant discovery. I also handle RNA-seq data for knockdown experiments and oversee the statistical analyses that support instrument performance reporting in our CAP-accredited clinical laboratory.
 
