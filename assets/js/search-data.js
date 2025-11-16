@@ -423,17 +423,7 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-differential-expression-analysis",
-          title: 'Differential Expression Analysis',
-          description: "for drug discovery using DESeq2 in R",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
+          section: "News",},{id: "projects-project-5",
           title: 'project 5',
           description: "a project with a background image",
           section: "Projects",handler: () => {
@@ -458,6 +448,16 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-cap-lab-instrument-qc-report",
+          title: 'CAP Lab Instrument QC Report',
+          description: "statistical reporting for measuring instrument performance",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/CAP-Reporting/";
+            },},{id: "projects-differential-expression-analysis",
+          title: 'Differential Expression Analysis',
+          description: "for drug discovery using DESeq2 in R",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/DEseq2/";
             },},{id: "projects-hybrid-genome-assembly-pipeline",
           title: 'Hybrid Genome Assembly Pipeline',
           description: "Combining ONT Long-Read Sequencing and Bionano Optical Genome Mapping for highly contiguous whole genome assemblies.",
