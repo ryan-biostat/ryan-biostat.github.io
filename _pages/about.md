@@ -27,7 +27,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Hello! My name is Ryan Gallagher and welcome to my academic profile! Here you will find information about myself, my projects, interests, and contributions.
+Hello! I’m Ryan Gallagher. Welcome to my academic homepage, where you can learn more about my background, projects, research interests, and contributions in biostatistics and bioinformatics.
 
 Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
 
