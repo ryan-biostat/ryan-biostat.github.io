@@ -423,9 +423,9 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+          section: "News",},{id: "projects-custom-whole-genome-long-read-sequencing-pipeline",
+          title: 'Custom Whole Genome Long-Read Sequencing Pipeline',
+          description: "for Oxford Nanopore Long-Read Platforms",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-project-2",
