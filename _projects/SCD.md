@@ -3,7 +3,7 @@ layout: page
 title: EMRs for Pediatric Research
 description: investigating health disparities among children with Sickle Cell Disease
 img: assets/img/sickle_cell.jpg
-importance: 3
+importance: 2
 category: Biostatistics
 ---
 
