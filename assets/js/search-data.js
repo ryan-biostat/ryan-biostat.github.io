@@ -423,12 +423,7 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
+          section: "News",},{id: "projects-project-8",
           title: 'project 8',
           description: "an other project with a background image and giscus comments",
           section: "Projects",handler: () => {
@@ -463,6 +458,11 @@ ninja.data = [{
           description: "investigating health disparities among children with Sickle Cell Disease",
           section: "Projects",handler: () => {
               window.location.href = "/projects/SCD/";
+            },},{id: "projects-learning-alphagenome",
+          title: 'Learning AlphaGenome',
+          description: "Investigating Google&#39;s newest tool that predicts how genetic mutations in DNA affect gene regulation and other biological processes",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/alphagenome/";
             },},{id: "projects-lab-sample-dashboard",
           title: 'Lab Sample Dashboard',
           description: "a Python + JavaScript dashboard for tracking whole genome samples as they process from lab to analysis",
