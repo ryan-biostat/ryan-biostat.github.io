@@ -463,9 +463,9 @@ ninja.data = [{
           description: "Combining ONT Long-Read Sequencing and Bionano Optical Genome Mapping for highly contiguous whole genome assemblies.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Hybrid/";
-            },},{id: "projects-custom-whole-genome-long-read-sequencing-pipeline",
-          title: 'Custom Whole Genome Long-Read Sequencing Pipeline',
-          description: "for Oxford Nanopore Long-Read Platforms",
+            },},{id: "projects-long-read-sequencing-pipeline",
+          title: 'Long-Read Sequencing Pipeline',
+          description: "customized for Whole Genomes on Oxford Nanopore Long-Read Platforms",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ONT_pipeline/";
             },},{
