@@ -11,8 +11,8 @@ profile:
   more_info: >
     <div class="text-center">
       <p class="h4">Biostatistician I</p>
-      <p Advanced Genomics Lab</p>
-      <p Medical College of Wisconsin</p>
+      <p> Advanced Genomics Lab</p>
+      <p> Medical College of Wisconsin</p>
     </div>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
