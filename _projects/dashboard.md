@@ -1,11 +1,13 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
+title: Lab Sample Dashboard
+description: a Python + JavaScript dashboard for tracking whole genome samples as they process from lab to analysis
 img:
-importance: 4
-category: fun
+importance: 2
+category: Biostatistics
 ---
+
+**Note:** This dashboard was created with help from the Google Gemini LLM. Majority of JavaScript coding was completed using specific prompts. Data aggregation and pipelining was done myself in Python.
 
 Every project has a beautiful feature showcase page.
 It's easy to include images in a flexible 3-column grid format.
@@ -15,8 +17,8 @@ To give your project a background in the portfolio page, just add the img tag to
 
     ---
     layout: page
-    title: project
-    description: a project with a background image
+    title: Lab Sample Dashboard
+    description: a Python + JavaScript dashboard for tracking whole genome samples as they process from lab to analysis
     img: /assets/img/12.jpg
     ---
 
