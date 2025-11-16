@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Custom Whole Genome Long-Read Sequencing Pipeline
-description: for Oxford Nanopore Long-Read Platforms
+title: Long-Read Sequencing Pipeline
+description: customized for Whole Genomes on Oxford Nanopore Long-Read Platforms
 img: assets/img/dna_sequencing.jpg
 importance: 1
 category: Bioinformatics
@@ -16,8 +16,8 @@ To give your project a background in the portfolio page, just add the img tag to
 
     ---
     layout: page
-    title: Custom Whole Genome Long-Read Sequencing Pipeline
-    description: for Oxford Nanopore Long-Read Platforms
+    title: Long-Read Sequencing Pipeline
+    description: customized for Whole Genomes on Oxford Nanopore Long-Read Platforms
     img: /assets/img/dna_sequencing.jpg
     ---
 
