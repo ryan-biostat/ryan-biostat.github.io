@@ -2,7 +2,7 @@
 layout: page
 title: Differential Expression Analysis
 description: for drug discovery using DESeq2 in R
-img: assets/img/deseq2_mapplot.png
+img: assets/img/deseq2_maplot.png
 importance: 3
 category: Biostatistics
 ---
@@ -17,7 +17,7 @@ To give your project a background in the portfolio page, just add the img tag to
     layout: page
     title: Differential Expression Analysis
     description: for drug discovery using DESeq2 in R
-    img: /assets/img/deseq2_mapplot.png
+    img: /assets/img/deseq2_maplot.png
     ---
 
 <div class="row">
