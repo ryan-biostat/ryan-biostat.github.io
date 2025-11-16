@@ -8,7 +8,7 @@ category: Bioinformatics
 related_publications: true
 ---
 
-## Intro
+## Purpose
 
 This pipeline is designed for processing whole genome samples from the Oxford Nanopore Technologies (ONT) PromethION long-read sequencing platform. In our lab, we process these samples on R10.9.1 flowcells, and this workflow interprets the resulting raw sequence data.
 
@@ -19,26 +19,67 @@ The pipeline is managed by a central Python script that feeds the data through a
 The pipeline consists of the following key steps:
 
 #### 1. **Transfer**
+
 Files are prepared for cross-server transfer. An `rsync` command is used to copy over raw sequencing data from the sequencing instrument to our lab's High-Performance Computing (HPC) cluster, named "maple".
 
 #### 2. **Alignment**
+
 Raw sequences are aligned to both the hg38 (GRCh38) and T2T (Telomere-to-Telomere) human reference genomes using `minimap2`. This process generates a BAM (.bam) file, which serves as the foundational file for subsequent analyses.
 
 #### 3. **CNV Calling**
+
 `ont-spectre`, a Copy Number Variant (CNV) calling tool developed by ONT, is utilized. Although still in development, we use it to create VCF (.vcf) files capable of identifying and annotating large structural variants, specifically those greater than 100kb. This step produces both .vcf and .bed files to aid in analysis.
 
 #### 4. **SV Calling**
+
 `sniffles2` is employed as our primary structural variant (SV) caller. It identifies a range of SVs, including deletions, insertions, translocations, and inversions. The typical size range for variants detected by `sniffles2` is between 10bp and 50kb. The output is a .vcf file.
 
 #### 5. **SNP/Small INDEL Calling**
+
 We use `deepvariant` from Google's DeepMind to call small genetic variants. This software utilizes a deep neural network to analyze the sequencing data. This step calls single nucleotide polymorphisms (SNPs) which are the most common type of genetic variation, representing a change in a single DNA building block (nucleotide), and small INsertions and DELetions (INDELs). This analysis also produces haplotyping information, allowing us to determine which genome strand belongs to which parent.
 
 #### 6. **Phasing**
+
 `whatshap` is used to assign haplotypes to our .bam files. This assignment allows us to determine which allele (parental copy) holds which mutations. This is critical for determining the inheritance mode for potential genetic diseases. `whatshap` achieves this by taking the information produced by `deepvariant` and annotating the .bam file, resulting in a .haplotagged.bam file.
 
 #### 7. **Annotation**
+
 `snpEFF` is used to annotate the small variants (SNPs and INDELs). It enriches the .vcf file by pulling information from multiple public databases, such as ClinVar and dbSNP, to provide aggregate data about known mutations.
 
 We also utilize the **Geneyx** software. This is a proprietary annotation platform that adds richer annotations and formats the datasets in a more contestable, browser-accessible way.
 
-## Results / Discussion
+## Discussion
+
+This pipeline can be executed via the following command:
+
+{% highlight python linenos %}
+
+# Activate the primary conda environment before running the pipeline
+conda activate spectre
+
+python pipeline.py <sample_name> <promethion_data_dir> <maple_output_dir> [--log-level LEVEL]
+
+## Help Output
+
+usage: pipeline.py [-h] [--log-level {DEBUG,INFO,WARNING,ERROR,CRITICAL}]
+                   sample_name data_dir to_dir
+
+ONT PromethION Data Processing Pipeline.
+
+positional arguments:
+  sample_name           The name of the sample being processed. This should
+                        match a created directory.
+  data_dir              Full path to the directory containing the sample data
+                        on the PromethION server (e.g.,
+                        /data/run_folder/sample_subfolder/).
+  to_dir                Full path to the MAPLE directory where output should
+                        be stored (e.g., /data2/flowcell_10.4.1/mcw_svi_.../).
+
+options:
+  -h, --help            show this help message and exit
+  --log-level {DEBUG,INFO,WARNING,ERROR,CRITICAL}
+                        Set the logging level (default: INFO)
+
+
+
+{% endhighlight %}
