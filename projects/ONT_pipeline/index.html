@@ -528,12 +528,6 @@
 472
 473
 474
-475
-476
-477
-478
-479
-480
 </pre></td> <td class="code"><pre><span class="c1">################################################################################
 </span>
 <span class="c1"># \_**\_ \_ \_ **\_**** **\_** **\_** **\_** **\_\_** \_ **\_** \_ \_ **\_\_**
@@ -585,8 +579,7 @@
 
 <span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
 
-        <span class="c1"># --- Updated Input Section using argparse---
-</span>    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="p">.</span><span class="nc">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="sh">'</span><span class="s">ONT PromethION Data Processing Pipeline.</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">parser</span> <span class="o">=</span> <span class="n">argparse</span><span class="p">.</span><span class="nc">ArgumentParser</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="sh">'</span><span class="s">ONT PromethION Data Processing Pipeline.</span><span class="sh">'</span><span class="p">)</span>
     <span class="n">parser</span><span class="p">.</span><span class="nf">add_argument</span><span class="p">(</span><span class="sh">'</span><span class="s">sample_name</span><span class="sh">'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
                         <span class="n">help</span><span class="o">=</span><span class="sh">'</span><span class="s">The name of the sample being processed. This should match a created directory.</span><span class="sh">'</span><span class="p">)</span>
     <span class="n">parser</span><span class="p">.</span><span class="nf">add_argument</span><span class="p">(</span><span class="sh">'</span><span class="s">data_dir</span><span class="sh">'</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="nb">str</span><span class="p">,</span>
@@ -603,8 +596,7 @@
 </span>    <span class="n">to_dir</span> <span class="o">=</span> <span class="nf">end_in_slash</span><span class="p">(</span><span class="n">args</span><span class="p">.</span><span class="n">to_dir</span><span class="p">)</span>     <span class="c1"># Apply end_in_slash here
 </span>
 
-        <span class="c1"># --- Updating Logging --- #
-</span>    <span class="n">log_dir</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">to_dir</span><span class="p">,</span> <span class="sh">'</span><span class="s">logs</span><span class="sh">'</span><span class="p">)</span>
+    <span class="n">log_dir</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">to_dir</span><span class="p">,</span> <span class="sh">'</span><span class="s">logs</span><span class="sh">'</span><span class="p">)</span>
     <span class="n">os</span><span class="p">.</span><span class="nf">makedirs</span><span class="p">(</span><span class="n">log_dir</span><span class="p">,</span> <span class="n">exist_ok</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
     <span class="n">log_file_path</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">log_dir</span><span class="p">,</span> <span class="sh">'</span><span class="s">pipeline.log</span><span class="sh">'</span><span class="p">)</span>
 
@@ -637,7 +629,6 @@
     <span class="n">sys</span><span class="p">.</span><span class="n">stderr</span> <span class="o">=</span> <span class="nc">StreamToLogger</span><span class="p">(</span><span class="n">logger</span><span class="p">,</span> <span class="n">logging</span><span class="p">.</span><span class="n">ERROR</span><span class="p">)</span>
 
     <span class="c1"># Now, we have to do any print() statements to logger.info() statements
-</span>    <span class="c1"># --- End Logging Setup ---
 </span>
     <span class="n">ref</span> <span class="o">=</span> <span class="sh">'</span><span class="s">/data/ref/NCBI/GRCh38/Homo_sapiens_assembly38_noALT_noHLA_noDecoy_ERCC.fasta</span><span class="sh">'</span>
     <span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sa">f</span><span class="sh">'</span><span class="s">Reference Genome set to:</span><span class="se">\n</span><span class="si">{</span><span class="n">ref</span><span class="si">}</span><span class="sh">'</span><span class="p">)</span>
@@ -769,8 +760,7 @@
                     <span class="n">logger</span><span class="p">.</span><span class="nf">warning</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">whatshap_phase-haplotag.py stderr:</span><span class="se">\n</span><span class="si">{</span><span class="n">result_whatshap</span><span class="p">.</span><span class="n">stderr</span><span class="p">.</span><span class="nf">strip</span><span class="p">()</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
                 <span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">whatshap_phase-haplotag.py script executed successfully.</span><span class="sh">"</span><span class="p">)</span>
 
-                <span class="c1"># --- ADDITION START ---
-</span>                <span class="c1"># Index the newly created haplotagged BAM file
+                <span class="c1"># Index the newly created haplotagged BAM file
 </span>                <span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sh">"</span><span class="s">Indexing the haplotagged BAM file with samtools.</span><span class="sh">"</span><span class="p">)</span>
                 <span class="n">haplotagged_bam</span> <span class="o">=</span> <span class="n">os</span><span class="p">.</span><span class="n">path</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">deepvariant_dir</span><span class="p">,</span> <span class="sa">f</span><span class="sh">"</span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s">_deepvariant_haplotagged.bam</span><span class="sh">"</span><span class="p">)</span>
 
@@ -800,8 +790,7 @@
                 <span class="k">else</span><span class="p">:</span>
                     <span class="n">logger</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Haplotagged BAM file not found for indexing: </span><span class="si">{</span><span class="n">haplotagged_bam</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
                     <span class="n">sys</span><span class="p">.</span><span class="nf">exit</span><span class="p">(</span><span class="sh">"</span><span class="s">Cannot index non-existent BAM file.</span><span class="sh">"</span><span class="p">)</span>
-                <span class="c1"># --- ADDITION END ---
-</span>
+
             <span class="k">except</span> <span class="n">subprocess</span><span class="p">.</span><span class="n">CalledProcessError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
                 <span class="n">logger</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Execution of whatshap_phase-haplotag.py failed with exit code </span><span class="si">{</span><span class="n">e</span><span class="p">.</span><span class="n">returncode</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">e</span><span class="p">.</span><span class="n">stdout</span><span class="p">:</span> <span class="n">logger</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Failed command stdout:</span><span class="se">\n</span><span class="si">{</span><span class="n">e</span><span class="p">.</span><span class="n">stdout</span><span class="p">.</span><span class="nf">strip</span><span class="p">()</span><span class="si">}</span><span class="sh">"</span><span class="p">)</span>
@@ -824,8 +813,7 @@
 </span>    <span class="c1"># Step 4: Large SV via Spectre
 </span>
     <span class="n">logger</span><span class="p">.</span><span class="nf">info</span><span class="p">(</span><span class="sa">f</span><span class="sh">"</span><span class="s">Running Spectre step for </span><span class="si">{</span><span class="n">sample_name</span><span class="si">}</span><span class="s"> using spectre.py</span><span class="sh">"</span><span class="p">)</span>
-    <span class="c1"># --- UPDATED COMMAND TO USE `conda run` ---
-</span>    <span class="n">spectre_py_command</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">spectre_py_command</span> <span class="o">=</span> <span class="p">[</span>
         <span class="sh">"</span><span class="s">conda</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">run</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">-n</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">spectre</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">python</span><span class="sh">"</span><span class="p">,</span> <span class="sh">"</span><span class="s">./pipes/spectre.py</span><span class="sh">"</span><span class="p">,</span>
         <span class="sh">"</span><span class="s">--input-dir</span><span class="sh">"</span><span class="p">,</span> <span class="n">to_dir</span><span class="p">,</span>
         <span class="sh">"</span><span class="s">--ref-genome</span><span class="sh">"</span><span class="p">,</span> <span class="n">ref</span><span class="p">,</span>
