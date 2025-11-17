@@ -92,6 +92,8 @@ options:
 {% endhighlight %}
 
 
+The following is the wrapper script that combines the "pipes" of the pipeline into one automatic process. 
+
 {% highlight python linenos %}
 
 ################################################################################
@@ -552,6 +554,6 @@ def main():
 if __name__ == '__main__':
    main()
 
-
-
 {% endhighlight %}
+
+![IGV Image](assets/img/igv.png)
