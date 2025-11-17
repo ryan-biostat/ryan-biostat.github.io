@@ -55,6 +55,7 @@ This pipeline is executed via the following command:
 {% highlight python linenos %}
 
 # Activate the primary conda environment before running the pipeline
+
 conda activate spectre
 
 python pipeline.py <sample_name> <promethion_data_dir> <maple_output_dir> [--log-level LEVEL]
@@ -62,25 +63,23 @@ python pipeline.py <sample_name> <promethion_data_dir> <maple_output_dir> [--log
 ## Help Output
 
 usage: pipeline.py [-h] [--log-level {DEBUG,INFO,WARNING,ERROR,CRITICAL}]
-                   sample_name data_dir to_dir
+sample_name data_dir to_dir
 
 ONT PromethION Data Processing Pipeline.
 
 positional arguments:
-  sample_name           The name of the sample being processed. This should
-                        match a created directory.
-  data_dir              Full path to the directory containing the sample data
-                        on the PromethION server (e.g.,
-                        /data/run_folder/sample_subfolder/).
-  to_dir                Full path to the MAPLE directory where output should
-                        be stored (e.g., /data2/flowcell_10.4.1/mcw_svi_.../).
+sample*name The name of the sample being processed. This should
+match a created directory.
+data_dir Full path to the directory containing the sample data
+on the PromethION server (e.g.,
+/data/run_folder/sample_subfolder/).
+to_dir Full path to the MAPLE directory where output should
+be stored (e.g., /data2/flowcell_10.4.1/mcw_svi*.../).
 
 options:
-  -h, --help            show this help message and exit
-  --log-level {DEBUG,INFO,WARNING,ERROR,CRITICAL}
-                        Set the logging level (default: INFO)
-
-
+-h, --help show this help message and exit
+--log-level {DEBUG,INFO,WARNING,ERROR,CRITICAL}
+Set the logging level (default: INFO)
 
 {% endhighlight %}
 
@@ -88,24 +87,40 @@ The wrapper script for this process is shown here:
 
 {% highlight python linenos %}
 
+################################################################################
+
+# \_**\_ \_ \_ **\_**** **\_** **\_** **\_** **\_\_** \_ **\_** \_ \_ **\_\_**
+
+# / ** \| \ | |** **| | ** \_ _| ** \| \_\_**| | |_ \_| \ | | \_\_\_\_|
+
+# | | | | \| | | | | |**) || | | |**) | |** | | | | | \| | |**
+
+# | | | | . `|  | |    |  ___/ | | |  ___/|  __| | |      | | | .` | \_\_|
+
+# | |**| | |\ | | | | | _| |_| | | |\_\_**| |\_**\_ _| |_| |\ | |\_\_**
+
+# \_**_/|_| \_| |_| |_| |\_\_\_**|\_| |**\_\_**|**\_\_**|**\_**|\_| \_|**\_\_**|
+
+#
 
 ################################################################################
-#   ____  _   _ _______   _____ _____ _____  ______ _      _____ _   _ ______  #
-#  / __ \| \ | |__   __| |  __ \_   _|  __ \|  ____| |    |_   _| \ | |  ____| #
-# | |  | |  \| |  | |    | |__) || | | |__) | |__  | |      | | |  \| | |__    #
-# | |  | | . ` |  | |    |  ___/ | | |  ___/|  __| | |      | | | . ` |  __|   #
-# | |__| | |\  |  | |    | |    _| |_| |    | |____| |____ _| |_| |\  | |____  #
-#  \____/|_| \_|  |_|    |_|   |_____|_|    |______|______|_____|_| \_|______| #
-#                                                                              #
-################################################################################
-#                                                                              #
-# Broeckle Lab Bioinformatics, 2024                                            #
-#                                                                              #
-# This file executes the pipeline for the ONT PromethION sequencing data by    #
-# executing tools at the prompt of the user. These scripts are stored in sub-  #
-# directories of the main directory, and can be edited and updated at a whim.  #
-#                                                                              #
-#                                                                              #
+
+#
+
+# Broeckle Lab Bioinformatics, 2024
+
+#
+
+# This file executes the pipeline for the ONT PromethION sequencing data by
+
+# executing tools at the prompt of the user. These scripts are stored in sub-
+
+# directories of the main directory, and can be edited and updated at a whim.
+
+#
+
+#
+
 ################################################################################
 ################################################################################
 
@@ -117,12 +132,11 @@ import argparse
 import logging
 
 def end_in_slash(dir):
-    if not dir.endswith('/'):
-        dir += '/'
-    return dir
+if not dir.endswith('/'):
+dir += '/'
+return dir
 
 def main():
-
 
         # --- Updated Input Section using argparse---
     parser = argparse.ArgumentParser(description='ONT PromethION Data Processing Pipeline.')
@@ -551,9 +565,7 @@ def main():
 
     logger.info("Pipeline Complete.") # Assuming this is the last step
 
-if __name__ == '__main__':
-   main()
-
-
+if **name** == '**main**':
+main()
 
 {% endhighlight %}
