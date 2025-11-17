@@ -5,7 +5,7 @@ description: combining ONT Long-Read Sequencing and Bionano Optical Genome Mappi
 img: assets/img/dna_background.jpg
 importance: 2
 category: Bioinformatics
-giscus_comments: true
+giscus_comments: false
 ---
 
 #### **About**
@@ -38,7 +38,7 @@ I adapted the Hybrid Scaffold approach for use with our long-read sequencing dat
 
    The [Hybrid Scaffold user manual](https://bionano.com/wp-content/uploads/2023/01/30324-Bionano-Access-Hybrid-Scaffold-Report-Guidelines.pdf) recommends a minimum contig N50 of 150 kb for input assemblies, so the first requirement on the sequencing side was to produce data capable of meeting or exceeding this threshold. To achieve this, I assembled the ONT long-read data using the [Flye](https://github.com/mikolmogorov/Flye) assembler, which is optimized for noisy long reads and designed to maximize contig length. By running Flye on our raw ONT data and iterating on parameters as needed, I was able to boost the N50 of the resulting contigs and generate an assembly that satisfied the 150 kb N50 requirement, making it suitable for downstream hybrid scaffolding with OGM.
 
-4. #### Generate & Evaluate the Assembly
+4. #### **Generate & Evaluate the Assembly**
 
    After preparing the data and integrating the required tools, I executed the Hybrid Scaffold workflow by stepping through each script in sequence to ensure the long-read assembly was formatted and processed correctly. Once the pipeline completed, we generated standard assembly metrics (N50, total assembly size, and structural concordance) to evaluate performance. The resulting hybrid assemblies were highly contiguous providing a reliable and representative reconstruction of each genome.
 
