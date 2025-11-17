@@ -438,14 +438,9 @@ ninja.data = [{
           description: "statistical reporting via RMarkdown for measuring instrument performance",
           section: "Projects",handler: () => {
               window.location.href = "/projects/CAP-Reporting/";
-            },},{id: "projects-differential-expression-analysis",
-          title: 'Differential Expression Analysis',
-          description: "for drug discovery using DESeq2 in R",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/DEseq2/";
             },},{id: "projects-hybrid-genome-assembly-pipeline",
           title: 'Hybrid Genome Assembly Pipeline',
-          description: "Combining ONT Long-Read Sequencing and Bionano Optical Genome Mapping for highly contiguous whole genome assemblies.",
+          description: "combining ONT Long-Read Sequencing and Bionano Optical Genome Mapping for highly contiguous whole genome assemblies.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Hybrid/";
             },},{id: "projects-long-read-sequencing-pipeline",
@@ -460,7 +455,7 @@ ninja.data = [{
               window.location.href = "/projects/SCD/";
             },},{id: "projects-learning-alphagenome",
           title: 'Learning AlphaGenome',
-          description: "Investigating Google&#39;s newest tool that predicts how genetic mutations in DNA affect gene regulation and other biological processes",
+          description: "investigating Google&#39;s newest tool that predicts how genetic mutations in DNA affect gene regulation and other biological processes",
           section: "Projects",handler: () => {
               window.location.href = "/projects/alphagenome/";
             },},{id: "projects-lab-sample-dashboard",
