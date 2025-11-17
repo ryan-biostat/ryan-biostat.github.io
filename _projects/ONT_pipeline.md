@@ -12,7 +12,7 @@ related_publications: true
 
 This project was my first major contribution to the MCW Advanced Genomics Lab. When I started, our capability for Long-Read Sequencing analysis was underdeveloped. I took a lot of initiative with getting a researched & structured pipeline created. I did a lot of diligence in researching the best-in-class tools for alignment, variant calling, and interpretation. It was also important to me that this pipeline was automated with clear and concise logging. It was also designed knowing that better tools will come around, and that it should be modular for the insertion of new tools.
 
-This pipeline has processed nearly 100 whole genomes and has contributed to discovering disease relevant mutations providing critial diagnostic answers. 
+This pipeline has **processed nearly 100 whole genomes** and has contributed to discovering disease relevant mutations providing critial diagnostic answers. 
 
 ## Purpose
 
@@ -55,6 +55,8 @@ We use `deepvariant` from Google's DeepMind to call small genetic variants. This
 We also utilize the **Geneyx** software. This is a proprietary annotation platform that adds richer annotations and formats the datasets in a more contestable, browser-accessible way.
 
 ## Discussion
+
+The functional pipeline is an automatic process with precise settings and logging capabilities. A whole genome can be processed in <8hrs using this pipeline. The capabilities of your computing resources will determine how many instances can run in parallel. 
 
 This pipeline is executed via the following command:
 
