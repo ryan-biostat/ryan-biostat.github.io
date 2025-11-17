@@ -89,7 +89,7 @@ options:
   -h, --help            show this help message and exit
   --log-level {DEBUG,INFO,WARNING,ERROR,CRITICAL}
                         Set the logging level (default: INFO)
-
+{% endhighlight %}
 
 
 {% highlight python linenos %}
