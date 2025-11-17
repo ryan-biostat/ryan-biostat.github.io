@@ -438,6 +438,11 @@ ninja.data = [{
           description: "statistical reporting via RMarkdown for measuring instrument performance",
           section: "Projects",handler: () => {
               window.location.href = "/projects/CAP-Reporting/";
+            },},{id: "projects-differential-expression-analysis",
+          title: 'Differential Expression Analysis',
+          description: "for drug discovery using DESeq2 in R",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/DEseq2/";
             },},{id: "projects-hybrid-genome-assembly-pipeline",
           title: 'Hybrid Genome Assembly Pipeline',
           description: "combining ONT Long-Read Sequencing and Bionano Optical Genome Mapping for highly contiguous whole genome assemblies.",
