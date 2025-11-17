@@ -56,7 +56,7 @@ We use `deepvariant` from Google's DeepMind to call small genetic variants. This
 
 We also utilize the **Geneyx** software. This is a proprietary annotation platform that adds richer annotations and formats the datasets in a more contestable, browser-accessible way.
 
-## Discussion
+## Code Sample
 
 The functional pipeline is an automatic process with precise settings and logging capabilities. A whole genome can be processed in <8hrs using this pipeline. The capabilities of your computing resources will determine how many instances can run in parallel. 
 
