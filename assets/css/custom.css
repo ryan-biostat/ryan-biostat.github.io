@@ -4,7 +4,7 @@
 
 div.highlight,
 figure.highlight {
-  max-height: 400px;  /* You can change this height */
+  max-height: 100px;  /* You can change this height */
   overflow-y: auto;
   border-radius: 4px; /* Optional: cleans up the edges */
 }

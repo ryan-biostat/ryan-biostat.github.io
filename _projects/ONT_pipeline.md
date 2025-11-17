@@ -148,7 +148,6 @@ return dir
 
 def main():
 
-        # --- Updated Input Section using argparse---
     parser = argparse.ArgumentParser(description='ONT PromethION Data Processing Pipeline.')
     parser.add_argument('sample_name', type=str,
                         help='The name of the sample being processed. This should match a created directory.')
@@ -166,7 +165,6 @@ def main():
     to_dir = end_in_slash(args.to_dir)     # Apply end_in_slash here
 
 
-        # --- Updating Logging --- #
     log_dir = os.path.join(to_dir, 'logs')
     os.makedirs(log_dir, exist_ok=True)
     log_file_path = os.path.join(log_dir, 'pipeline.log')
@@ -200,7 +198,6 @@ def main():
     sys.stderr = StreamToLogger(logger, logging.ERROR)
 
     # Now, we have to do any print() statements to logger.info() statements
-    # --- End Logging Setup ---
 
     ref = '/data/ref/NCBI/GRCh38/Homo_sapiens_assembly38_noALT_noHLA_noDecoy_ERCC.fasta'
     logger.info(f'Reference Genome set to:\n{ref}')
@@ -332,7 +329,6 @@ def main():
                     logger.warning(f"whatshap_phase-haplotag.py stderr:\n{result_whatshap.stderr.strip()}")
                 logger.info("whatshap_phase-haplotag.py script executed successfully.")
 
-                # --- ADDITION START ---
                 # Index the newly created haplotagged BAM file
                 logger.info("Indexing the haplotagged BAM file with samtools.")
                 haplotagged_bam = os.path.join(deepvariant_dir, f"{sample_name}_deepvariant_haplotagged.bam")
@@ -363,7 +359,6 @@ def main():
                 else:
                     logger.error(f"Haplotagged BAM file not found for indexing: {haplotagged_bam}")
                     sys.exit("Cannot index non-existent BAM file.")
-                # --- ADDITION END ---
 
             except subprocess.CalledProcessError as e:
                 logger.error(f"Execution of whatshap_phase-haplotag.py failed with exit code {e.returncode}")
@@ -387,7 +382,6 @@ def main():
     # Step 4: Large SV via Spectre
 
     logger.info(f"Running Spectre step for {sample_name} using spectre.py")
-    # --- UPDATED COMMAND TO USE `conda run` ---
     spectre_py_command = [
         "conda", "run", "-n", "spectre", "python", "./pipes/spectre.py",
         "--input-dir", to_dir,
