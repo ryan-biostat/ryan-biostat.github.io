@@ -10,7 +10,9 @@ related_publications: true
 
 #### **About**
 
-This project was my first major contribution to the MCW Advanced Genomics Lab. When I started, our capability for Long-Read Sequencing analysis was underdeveloped. I took a lot of initiative with getting a researched & structured pipeline created. I did a lot of diligence in researching the best-in-class tools for alignment, variant calling, and interpretation. It was also important to me that this pipeline was automated with clear and concise logging. It was also designed knowing that better tools will come around, and that it should be modular for the insertion of new tools.
+This project was my first major contribution to the MCW Advanced Genomics Lab. When I started, our capability for Long-Read Sequencing analysis was underdeveloped, so I took a lot of initiative with getting a researched & structured pipeline created. I did a lot of diligence in researching the best-in-class tools for alignment, variant calling, and interpretation.
+
+It was also important to me that this pipeline was automated with clear and concise logging. Knowing that better tools will come around, it was also designed to be modular for the insertion of new tools.
 
 This pipeline has **processed nearly 100 whole genomes** and has contributed to discovering disease relevant mutations providing critial diagnostic answers. 
 
