@@ -94,16 +94,23 @@ options:
 
 {% highlight python linenos %}
 
-#
-# Broeckle Lab Bioinformatics, 2024
-#
-# This file executes the pipeline for the ONT PromethION sequencing data by
-# executing tools at the prompt of the user. These scripts are stored in sub-
-# directories of the main directory, and can be edited and updated at a whim.
-#
-#
-
 ################################################################################
+#   ____  _   _ _______   _____ _____ _____  ______ _      _____ _   _ ______  #
+#  / __ \| \ | |__   __| |  __ \_   _|  __ \|  ____| |    |_   _| \ | |  ____| #
+# | |  | |  \| |  | |    | |__) || | | |__) | |__  | |      | | |  \| | |__    #
+# | |  | | . ` |  | |    |  ___/ | | |  ___/|  __| | |      | | | . ` |  __|   #
+# | |__| | |\  |  | |    | |    _| |_| |    | |____| |____ _| |_| |\  | |____  #
+#  \____/|_| \_|  |_|    |_|   |_____|_|    |______|______|_____|_| \_|______| #
+#                                                                              #
+################################################################################
+#                                                                              #
+# Broeckle Lab Bioinformatics, 2024                                            #
+#                                                                              #
+# This file executes the pipeline for the ONT PromethION sequencing data by    #
+# executing tools at the prompt of the user. These scripts are stored in sub-  #
+# directories of the main directory, and can be edited and updated at a whim.  #
+#                                                                              #
+#                                                                              #
 ################################################################################
 
 import os
@@ -115,10 +122,11 @@ import logging
 
 def end_in_slash(dir):
     if not dir.endswith('/'):
-    dir += '/'
+        dir += '/'
     return dir
 
 def main():
+
 
     parser = argparse.ArgumentParser(description='ONT PromethION Data Processing Pipeline.')
     parser.add_argument('sample_name', type=str,
@@ -541,7 +549,9 @@ def main():
 
     logger.info("Pipeline Complete.") # Assuming this is the last step
 
-if name() == main():
-    main()
+if __name__ == '__main__':
+   main()
+
+
 
 {% endhighlight %}

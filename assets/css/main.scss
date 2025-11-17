@@ -27,7 +27,7 @@ $max-content-width: {{ site.max_width }};
 // Make code highlight blocks scrollable
 figure.highlight,
 div.highlight {
-  max-height: 400px;   // adjust height if you like
+  max-height: 500px;   // adjust height if you like
   overflow-y: auto;    // vertical scroll
 }
 
