@@ -23,3 +23,11 @@ $max-content-width: {{ site.max_width }};
   "tabler-icons/tabler-icons-filled.scss",
   "tabler-icons/tabler-icons-outline.scss"
 ;
+
+// Make code highlight blocks scrollable
+figure.highlight,
+div.highlight {
+  max-height: 400px;   // adjust height if you like
+  overflow-y: auto;    // vertical scroll
+}
+

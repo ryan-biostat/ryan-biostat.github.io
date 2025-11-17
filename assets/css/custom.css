@@ -2,14 +2,3 @@
   font-size: 1.5rem; /* The default is likely 2rem or larger. Adjust this value down as needed. */
 }
 
-
-/*
- * This targets the <pre> tag *inside* the highlight wrappers,
- * which is the element that actually needs to scroll.
-*/
-div.highlight > pre,
-figure.highlight > pre {
-  max-height: 100px;  /* Low value for testing, as you wanted */
-  overflow-y: auto;
-  border-radius: 4px; /* Optional: cleans up the edges */
-}
