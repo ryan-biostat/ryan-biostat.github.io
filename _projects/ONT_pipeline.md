@@ -5,7 +5,7 @@ description: customized for Whole Genomes on Oxford Nanopore Long-Read Platforms
 img: assets/img/dna_sequencing.jpg
 importance: 1
 category: Bioinformatics
-related_publications: true
+related_publications: false
 ---
 
 #### **About**
@@ -63,9 +63,6 @@ The functional pipeline is an automatic process with precise settings and loggin
 This pipeline is executed via the following command:
 
 {% highlight python linenos %}
-
-# Activate the primary conda environment before running the pipeline
-conda activate spectre
 
 python pipeline.py <sample_name> <promethion_data_dir> <maple_output_dir> [--log-level LEVEL]
 
@@ -555,5 +552,7 @@ if __name__ == '__main__':
    main()
 
 {% endhighlight %}
+
+After processing, variant analysis can begin by viewing the genome with annotations in the Integrated Genome Viewer (IGV). A snapshot of this analysis looks like this:
 
 ![IGV Image](assets/img/igv.png)
