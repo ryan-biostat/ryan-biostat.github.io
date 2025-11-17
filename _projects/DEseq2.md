@@ -1,5 +1,3 @@
-#### **About**
-
 ---
 layout: page
 title: Differential Expression Analysis
@@ -8,6 +6,8 @@ img: assets/img/deseq2_maplot.png
 importance: 1
 category: Biostatistics
 ---
+
+#### **About**
 
 I’m part of a grant-funded project studying how different drugs change gene expression in the human genome. It’s been a great crash course in how RNA behaves and how we can actually measure those changes in real data.
 
@@ -162,18 +162,18 @@ RvS_DESeq2 = function(KI, dose, paired=F) {
 
 
 ​    
-    ## REMOVE LOW ABUNDANCE
-    d1 = dim(cts.instance)
-    gene.medians=rowMedians(as.matrix(cts.instance))
-    index.lowCountGenes=which(gene.medians<=10)
-    cts.instance=cts.instance[-index.lowCountGenes,]
-    d2 = dim(cts.instance)
-    print(paste("Low Abdundance Filtering Removed:", d1[1]-d2[1], "Gene Rows.", sep=' '))
-      
-    if (nrow(meta.instance) == 12) {
-      directory = "REDACTED"
-    }
-    
+​    ## REMOVE LOW ABUNDANCE
+​    d1 = dim(cts.instance)
+​    gene.medians=rowMedians(as.matrix(cts.instance))
+​    index.lowCountGenes=which(gene.medians<=10)
+​    cts.instance=cts.instance[-index.lowCountGenes,]
+​    d2 = dim(cts.instance)
+​    print(paste("Low Abdundance Filtering Removed:", d1[1]-d2[1], "Gene Rows.", sep=' '))
+​      
+​    if (nrow(meta.instance) == 12) {
+​      directory = "REDACTED"
+​    }
+​    
     if (nrow(meta.instance) != 12) {
       directory = "REDACTED"
     }
