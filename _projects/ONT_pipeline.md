@@ -114,9 +114,9 @@ import argparse
 import logging
 
 def end_in_slash(dir):
-if not dir.endswith('/'):
-dir += '/'
-return dir
+    if not dir.endswith('/'):
+    dir += '/'
+    return dir
 
 def main():
 
