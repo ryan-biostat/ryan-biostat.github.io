@@ -555,4 +555,9 @@ if __name__ == '__main__':
 
 After processing, variant analysis can begin by viewing the genome with annotations in the Integrated Genome Viewer (IGV). A snapshot of this analysis looks like this:
 
-![IGV Image](assets/img/igv.png)
+{% include figure.liquid 
+    path="assets/img/igv.png"
+    title="IGV Image"
+    class="img-fluid rounded z-depth-1"
+%}
+
