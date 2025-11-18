@@ -25,19 +25,19 @@ Our lab currently manages nearly a hundred samples at various stages of the Long
 
    Before writing any code, I spent time exploring how best to create an interactive and shareable dashboard for the lab. I initially looked at business intelligence tools (PowereBI, Tableau) but they were slow and costly. Eventually, this search led me to using Vite and React that was advertised to be fast and flexible. Since I was new to JavaScript and React, I knew I'd have to rely heavily on large language models (LLMs). These tools offer help designing components, troubleshooting errors, and translating ideas into working code.
 
-2. #### Select an LLM
+2. #### **Select an LLM**
 
    I compared several models focusing  coding, responsiveness, and debugging efficiency. Based on benchmarks and hands-on testing, I chose Gemini Pro 2.5, which consistently outperformed competitors at the time. Another major advantage was its Canvas mode that lets users edit code directly, highlight specific sections, and ask targeted questions within the same interface. This made it easy to iterate quickly and fix errors without jumping between multiple tools.
 
-3. #### Generate a Dashboard and Customize
+3. #### **Generate a Dashboard and Customize**
 
    I connected the project’s GitHub repository directly to Gemini, which made it easy for the model to read the code, propose edits, and build new features. Reaching the design I envisioned took a lot of back-and-forth until everything behaved the way I wanted. Through that iterative process, I ended up learning quite a bit of JavaScript and gaining a clearer understanding of how React components work together. The final structure of the dashboard came from this cycle of generating code, reviewing the results, and gradually shaping it into something polished and functional.
 
-4. #### Gather Data from Local Sources
+4. #### **Gather Data from Local Sources**
 
    All the information displayed on the dashboard came directly from our lab's Excel sheets. To make this usable in a web dashboard, I wrote Python scripts to parse multiple spreadsheets, clean the fields, and aggregate everything into a single structured document that the dashboard could easily read. Because new samples are constantly added and statuses change over time, this workflow needed to be reliable and repeatable. The scripts were designed to run the same process over and over, pulling fresh data each time without breaking, so the dashboard would always reflect the most current information available.
 
-5. #### Publish and Maintain
+5. #### **Publish and Maintain**
 
    Once the dashboard was functional, the final step was making it accessible to the rest of the lab. I deployed it through our computing cluster so it could be viewed on our local network without exposing anything externally. Since the dashboard displays sensitive sample information, I worked closely with our security team to ensure that all access was restricted and that no data could be reached from outside our internal environment. I also set up the Python retrieval script to run automatically every morning, pulling in the latest Excel updates and refreshing the dashboard’s data. This automated process has been running reliably for nearly six months, keeping the dashboard current without requiring any manual intervention.
 

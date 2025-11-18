@@ -12,27 +12,27 @@ related_publications: false
 
 New tools in genomics are very exciting and I have a particular affection for Google's tools. We currently implement DeepVariant for our small-variant calling, and I haven't worked with it personally, but I'm aware of how powerful AlphaFold is for protein science. So when I learned that AlphaGenome was a new tool that could apply to our research in genomics, I was very excited to get into the weeds with it. This page documents my time learning and ingesting this very new tool.
 
-## Purpose
+## **Purpose**
 
 Our lab is deeply invested in understanding how genetic variation (both large and small) shapes phenotype. AlphaGenome doesn’t directly solve that problem yet, but its ability to approximate the impact of variants on the surrounding genomic context could move us ever-so closer. By building hands-on expertise with AlphaGenome now, we want to be ready for the moment when models of this class can more explicitly link sequence to phenotype. In the meantime, we expect the framework and intermediate outputs to generate useful insights on side questions and adjacent projects, making the time spent learning this tool a clear net positive for the lab.
 
-## Method
+## **Method**
 
-1. #### Read the Documentation
+1. #### **Read the Documentation**
 
    The [AlphaGenome documentation](https://www.alphagenomedocs.com/) provides a full starting path by walking through obtaining an API key, installing the Python client, and running the model on small, toy examples to verify that predictions can be generated. It also introduces the core abstractions used throughout the API (such as sequence and variant objects) and demonstrates how to submit regions or variants for prediction. The docs emphasize that the current implementation is best suited for <100kb analyses which is a current limitation of the software. It also describes the kind of tissue-data available and the type of variables its capable of predicting.
 
-2. #### Learn from Community Explanations
+2. #### **Learn from Community Explanations**
 
    As a complement to the official documentation, we also spent time learning from the broader community. The official forums are a great place to get answers to questions and see where people might be similarly struggling. This resource also links out to a lot of great community made videos, which aid heavily for understanding. I found some useful explanation videos about initial install and testing [here](https://www.youtube.com/watch?v=D_EVxgyd3sc). I also learned a lot about the theory behind this tool via a journal club video [here](https://www.youtube.com/watch?v=ihfQUBgsWxY&t=3296s). 
 
-3. #### Work Through Tutorials
+3. #### **Work Through Tutorials**
 
    To apply my learning, I setup a Python environment on my MacBook and installed the AlphaGenome client and its dependencies. I followed tutorials for getting API access, and I began working on the "Scoring and Visualizing a Variant" tutorial which walks through extracting a genomic window around a variant and running predictions.
 
    
 
-## Code Sample
+## **Code Sample**
 
 My worked tutorial from the documentation:
 
