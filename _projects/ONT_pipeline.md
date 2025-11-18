@@ -16,13 +16,13 @@ It was also important to me that this pipeline was automated with clear and conc
 
 This pipeline has **processed nearly 100 whole genomes** and has contributed to discovering disease relevant mutations providing critial diagnostic answers. 
 
-## Purpose
+## **Purpose**
 
 This pipeline is designed for processing whole genome samples from the [Oxford Nanopore Technologies](https://nanoporetech.com/) (ONT) PromethION long-read sequencing platform. In our lab, we process these samples on R10.9.1 flowcells, and this workflow interprets the resulting raw sequence data.
 
 The pipeline is managed by a central Python script that feeds the data through a series of specialized bioinformatics software to move from raw data to an annotated list of genetic variants.
 
-## Method
+## **Method**
 
 The pipeline consists of the following key steps:
 
@@ -56,7 +56,7 @@ We use [`deepvariant`](https://github.com/google/deepvariant) from Google's Deep
 
 We also utilize the [Geneyx](geneyx.com) software. This is a proprietary annotation platform that adds richer annotations and formats the datasets in a more contestable, browser-accessible way.
 
-## Code Sample
+## **Code Sample**
 
 The functional pipeline is an automatic process with precise settings and logging capabilities. A whole genome can be processed in <8hrs using this pipeline. The capabilities of your computing resources will determine how many instances can run in parallel. 
 

@@ -14,13 +14,13 @@ The MCW Advanced Genomics lab specializes in two sequencing platforms: Oxford Na
 
 In 2023, Bionano published a [Hybrid Scaffold](https://bionano.com/wp-content/uploads/2023/08/CG-30073-Bionano-Solve-Theory-of-Operation-Hybrid-Scaffold.pdf) workflow onto their integrated analysis platform. This tool enabled users to combine sequencing data with OGM data to build scaffolded genomic [assemblies](https://useast.ensembl.org/info/genome/genebuild/assembly.html). Although it was designed for short-read data and later deprecated as the company shifted focus, our lab saw an opportunity to extend its utility. 
 
-## Purpose
+## **Purpose**
 
 Genomic assemblies are reconstructed versions of an organism’s genome, built by stitching sequencing reads into longer sequences so we can view DNA as continuous contigs, scaffolds, and ideally chromosome-scale structures instead of millions of isolated reads. LRS provides base-level detail and resolves repeats, while OGM contributes large-scale structural information that helps order and orient contigs into larger, more accurate scaffolds.
 
 Assembly quality is evaluated using contiguity metrics ([N50](https://en.wikipedia.org/wiki/N50,_L50,_and_related_statistics)), completeness ([BUSCO scores](https://academic.oup.com/bioinformatics/article/31/19/3210/211866)), and structural accuracy. High-quality assemblies enable more reliable structural variant discovery, resolution of complex regions, and the creation of personalized or population-specific references that improve downstream analysis. By integrating ONT and OGM, this project aims to generate hybrid assemblies that combine precise sequence information with robust large-scale structure.
 
-## Methods
+## **Methods**
 
 I adapted the Hybrid Scaffold approach for use with our long-read sequencing data and optimized the workflow for our lab samples. 
 
@@ -48,7 +48,7 @@ I adapted the Hybrid Scaffold approach for use with our long-read sequencing dat
 
    
 
-## Code Sample
+## **Code Sample**
 
 A snippet of the Hybrid Assembly Pipeline Code.
 

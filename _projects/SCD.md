@@ -15,7 +15,7 @@ I joined this project under the mentorship of Dr. Sparapani, after a collaborato
 
 
 
-## Master's Capstone
+## **Master's Capstone**
 
 Read my master's capstone titled: [Pediatric Disparities in Sickle Cell Disease and Quantile Regressionfor Childhood Growth Charts with a Multi-institutional Databank of Electronic Health Records]({{ '/assets/pdf/MastersCapstone_RG.pdf' | relative_url }}).
 
