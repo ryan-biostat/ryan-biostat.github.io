@@ -15,13 +15,13 @@ Our lab relies on several high-performance instruments for sequencing, and maint
 
 
 
-## **Purpose**
+## Purpose
 
 Clinical laboratories operate under strict regulatory standards to ensure the accuracy, reliability, and safety of diagnostic testing. One of the highest benchmarks in the United States is [CAP accreditation](https://www.cap.org/laboratory-improvement/accreditation/laboratory-accreditation-program), issued by the College of American Pathologists. CAP-accredited labs must demonstrate that their instruments, workflows, and analytical processes consistently meet rigorous quality standards. A key component of this accreditation is the ongoing evaluation of instrument performance using manufacturer-defined quality control (QC) metrics.
 
 In our lab, instrument systems directly support sequencing, so the clinical arm depends on equivalent performance across machines. Subtle deviations can signal emerging issues that may affect sample integrity or raise CAP compliance concerns. This project addresses that need by establishing a routine, statistically grounded reporting system that analyzes QC data on a recurring schedule. Statistical methods provide the framework to distinguish true changes from natural variability and quantify uncertainty, while structured report generation translates these findings into summaries for clinical leadership and potential auditors.
 
-## **Methods**
+## Methods
 
 Generate quarterly statistical reports for our CAP lab to evaluate QC metrics.
 
@@ -41,7 +41,7 @@ Generate quarterly statistical reports for our CAP lab to evaluate QC metrics.
 
    After completing the analyses, I met with the lab director and clinical staff to walk through the key findings. I presented the workflow from data acquisition through modeling, explained my reasoning behind each analytical step, and highlighted the most relevant outcomes for both each system. My goal was to ensure that the statistical results were understandable, actionable, and aligned with the lab’s operational needs and CAP expectations. These reports continue to be generated and aid in machine evaluation for our lab.
 
-## **Code Sample**
+## Code Sample
 
 {% highlight R linenos %}
 

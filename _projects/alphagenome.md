@@ -12,11 +12,11 @@ related_publications: false
 
 New tools in genomics are very exciting and I have a particular affection for Google's tools. We currently implement DeepVariant for our small-variant calling, and I haven't worked with it personally, but I'm aware of how powerful AlphaFold is for protein science. So when I learned that AlphaGenome was a new tool that could apply to our research in genomics, I was very excited to get into the weeds with it. This page documents my time learning and ingesting this very new tool.
 
-## **Purpose**
+## Purpose
 
 Our lab is deeply invested in understanding how genetic variation (both large and small) shapes phenotype. AlphaGenome doesn’t directly solve that problem yet, but its ability to approximate the impact of variants on the surrounding genomic context could move us ever-so closer. By building hands-on expertise with AlphaGenome now, we want to be ready for the moment when models of this class can more explicitly link sequence to phenotype. In the meantime, we expect the framework and intermediate outputs to generate useful insights on side questions and adjacent projects, making the time spent learning this tool a clear net positive for the lab.
 
-## **Method**
+## Method
 
 1. #### **Read the Documentation**
 
@@ -32,7 +32,7 @@ Our lab is deeply invested in understanding how genetic variation (both large an
 
    
 
-## **Code Sample**
+## Code Sample
 
 My worked tutorial from the documentation:
 

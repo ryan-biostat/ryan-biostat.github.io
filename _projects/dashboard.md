@@ -13,13 +13,13 @@ To improve lab communication, we required a process to track samples processed f
 
 This presented a unique opportunity to learn a new language through AI-assisted development. With heavy support from Google Gemini, I built a Vite + React dashboard that pulls data via APIs and Python scripts to retrieve, clean, and format the underlying data. The result is a friendly, easily-navigable dashboard that communicates LRS processing that give me hands-on experience with webpage development and LLM-assisted coding.
 
-## **Purpose**
+## Purpose
 
 Our lab currently manages nearly a hundred samples at various stages of the Long-Read Sequencing workflow, including completed samples, those in progress, and others still waiting to be processed. Clinicians and collaborating physicians often request updates, and answering these questions requires navigating our Linux-based computing cluster, which is not accessible to everyone. This dashboard was created to give any member of the lab a clear and straightforward view of the information available for each sample. It addresses our immediate communication needs while providing a flexible foundation for future growth, allowing new metrics and visualizations to be added as the lab’s questions and workflows evolve.
 
 
 
-## **Methods**
+## Methods
 
 1. #### **Figure Out What to Build**
 
@@ -41,7 +41,7 @@ Our lab currently manages nearly a hundred samples at various stages of the Long
 
    Once the dashboard was functional, the final step was making it accessible to the rest of the lab. I deployed it through our computing cluster so it could be viewed on our local network without exposing anything externally. Since the dashboard displays sensitive sample information, I worked closely with our security team to ensure that all access was restricted and that no data could be reached from outside our internal environment. I also set up the Python retrieval script to run automatically every morning, pulling in the latest Excel updates and refreshing the dashboard’s data. This automated process has been running reliably for nearly six months, keeping the dashboard current without requiring any manual intervention.
 
-## **Snapshot**
+## Snapshot
 
 Here is a snapshot of our project dashboard. Each sample populates a single row with icons communicating their status in the processing pipeline.
 
