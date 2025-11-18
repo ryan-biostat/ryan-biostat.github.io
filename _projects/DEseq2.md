@@ -13,7 +13,7 @@ I’m part of a grant-funded project studying how different drugs change gene ex
 
 On this project I’ve gotten hands-on experience working with expression data, collaborating with people from different disciplines, and communicating results clearly. One hallmark of this project was weekly presentations of findings to our group of experts, this was a slightly intimidating but really rewarding experience that helped me build a lot of confidence in my scientific communication and teamwork skills. The insights from my analysis have already helped shape the next steps of the research, and the project is still actively moving forward.
 
-## Purpose
+## **Purpose**
 
 Tyrosine kinase inhibitors (TKIs) are a class of targeted cancer therapies that block enzymes called tyrosine kinases, which help control cell signaling, growth, and division. According to the [National Cancer Institute](https://www.cancer.gov/publications/dictionaries/cancer-terms/def/tyrosine-kinase-inhibitor?utm_source=chatgpt.com), these enzymes can be overactive or dysregulated in some cancers, and inhibiting them can slow tumor growth and promote cancer cell death.
 
@@ -21,7 +21,7 @@ Tyrosine kinase inhibitors (TKIs) are a class of targeted cancer therapies that 
 
 In this project, I used [DESeq2](https://bioconductor.org/packages/release/bioc/html/DESeq2.html), an R/Bioconductor package for RNA-seq differential expression analysis, to quantify how gene expression changed across cell types, drugs, and doses. This method models count data with a negative binomial distribution and uses moderated estimates of dispersion and fold change to identify genes that are significantly up- or down-regulated between conditions. After generating lists of differentially expressed genes, I performed pathway and gene-set enrichment analysis using [ShinyGO](https://bioinformatics.sdstate.edu/go/) and the [KEGG](https://www.genome.jp/kegg/) database. ShinyGO, developed at South Dakota State University, provides graphical enrichment analysis and integrates with KEGG and other resources to map gene lists onto functional categories and pathways. Together, DESeq2-based differential expression and pathway analysis allowed me to move from raw RNA counts to an interpretation about how TKIs influence cellular pathways.
 
-## Methods
+## **Methods**
 
 Analysis was performed via the following steps:
 
@@ -49,7 +49,7 @@ Analysis was performed via the following steps:
 
    ShinyGO provided ranked lists of enriched pathways, along with statistical metrics such as fold enrichment and adjusted p-values. I downloaded these results for every TKI–dose pair and then processed them in R to create visual summaries. Using these outputs, I generated figures highlighting the top enriched pathways for each experimental condition. These visualizations helped compare how different TKIs and doses perturbed cellular signaling and functional processes, and they provided a higher-level interpretation of the transcriptomic responses identified in the DESeq2 analysis.
 
-## Code Sample
+## **Code Sample**
 
 The following code displays the core script for running differential expression analysis via DESeq2: 
 
@@ -174,10 +174,10 @@ RvS_DESeq2 = function(KI, dose, paired=F) {
 ​      directory = "REDACTED"
 ​    }
 ​    
-    if (nrow(meta.instance) != 12) {
-      directory = "REDACTED"
-    }
-    
+​    if (nrow(meta.instance) != 12) {
+​      directory = "REDACTED"
+​    }
+​    
     dds = DESeqDataSetFromMatrix(countData = cts.instance,
                                  colData = meta.instance,
                                  design = ~ treatment + Class)
