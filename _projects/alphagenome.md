@@ -8,67 +8,350 @@ category: Bioinformatics
 related_publications: true
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+#### **About**
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+New tools in genomics are very exciting and I have a particular affection for Google's tools. We currently implement DeepVariant for our small-variant calling, and I haven't worked with it personally, but I'm aware of how powerful AlphaFold is for protein science. So when I learned that AlphaGenome was a new tool that could apply to our research in genomics, I was very excited to get into the weeds with it. This page documents my time learning and ingesting this very new tool.
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+## Purpose
 
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+Our lab is deeply invested in understanding how genetic variation (both large and small) shapes phenotype. AlphaGenome doesn’t directly solve that problem yet, but its ability to approximate the impact of variants on the surrounding genomic context could move us ever-so closer. By building hands-on expertise with AlphaGenome now, we want to be ready for the moment when models of this class can more explicitly link sequence to phenotype. In the meantime, we expect the framework and intermediate outputs to generate useful insights on side questions and adjacent projects, making the time spent learning this tool a clear net positive for the lab.
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+## Method
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+1. #### Read the Documentation
 
-{% raw %}
+   The [AlphaGenome documentation](https://www.alphagenomedocs.com/) provides a full starting path by walking through obtaining an API key, installing the Python client, and running the model on small, toy examples to verify that predictions can be generated. It also introduces the core abstractions used throughout the API (such as sequence and variant objects) and demonstrates how to submit regions or variants for prediction. The docs emphasize that the current implementation is best suited for <100kb analyses which is a current limitation of the software. It also describes the kind of tissue-data available and the type of variables its capable of predicting.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+2. #### Learn from Community Explanations
 
-{% endraw %}
+   As a complement to the official documentation, we also spent time learning from the broader community. The official forums are a great place to get answers to questions and see where people might be similarly struggling. This resource also links out to a lot of great community made videos, which aid heavily for understanding. I found some useful explanation videos about initial install and testing [here](https://www.youtube.com/watch?v=D_EVxgyd3sc). I also learned a lot about the theory behind this tool via a journal club video [here](https://www.youtube.com/watch?v=ihfQUBgsWxY&t=3296s). 
+
+3. #### Work Through Tutorials
+
+   To apply my learning, I setup a Python environment on my MacBook and installed the AlphaGenome client and its dependencies. I followed tutorials for getting API access, and I began working on the "Scoring and Visualizing a Variant" tutorial which walks through extracting a genomic window around a variant and running predictions.
+
+   
+
+## Code Sample
+
+My worked tutorial from the documentation:
+
+{% highlight python linenos %}
+
+'''
+Ryan Gallagher
+
+Scoring and Visualizing a Single Variant
+
+Adapted from https://www.alphagenomedocs.com/colabs/variant_scoring_ui.html
+
+Here, we go through the process of predicting the effect of a single variant on different modalities, such as gene expression and chromatin accessibility.
+
+For my application, I'm going to substitute the tutorial variant for a real one that we see in (SAMPLE).
+
+Utilizing Geneyx - we find that there is an intronic deletion on the DEAF1 gene - which seems to match our patient's pheno well.
+
+'''
+
+from secret.api_key import ALPHA_GENOME_API_KEY
+
+from alphagenome.data import gene_annotation, genome, transcript
+from alphagenome.models import dna_client, variant_scorers
+from alphagenome.visualization import plot_components
+import pandas as pd
+
+# Load the model
+dna_model = dna_client.create(ALPHA_GENOME_API_KEY())
+
+HG38_GTF_FEATHER = (
+    'https://storage.googleapis.com/alphagenome/reference/gencode/'
+    'hg38/gencode.v46.annotation.gtf.gz.feather'
+)
+
+# Initialize an empty directory to serve as a variant effect prediction cache.
+_prediction_cache = {}
+_transcript_extractor_cache = {}
+
+print('\n ---- Score Variant ---- \n')
+
+organism = 'human'
+organism_map = {'human': dna_client.Organism.HOMO_SAPIENS}
+organism = organism_map[organism]
+
+# A real deletion on the DEAF1 gene of SVI 0162 UDD
+variant_chromosome = 'chr9'
+variant_position = 134644202
+variant_reference_bases = ''
+variant_alternate_bases = 'GGGGAGGGGGCGGCTGTCCACTGGAGATGCAGGCGTGGC'
+
+variant = genome.Variant(
+        chromosome = variant_chromosome,
+        position = variant_position,
+        reference_bases = variant_reference_bases,
+        alternate_bases = variant_alternate_bases,
+        )
+
+# Specify length of sequence around variant to predict (this is taking HG38 surrounding the event and predicting when there is vs. isnt a deletion there)
+
+sequence_length = '1MB' # options = '2KB', '16KB', '100KB', '500KB', '1MB' as string
+sequence_length = dna_client.SUPPORTED_SEQUENCE_LENGTHS[
+        f'SEQUENCE_LENGTH_{sequence_length}'
+        ]
+
+# The input interval is derived from the variant (centered on it).
+interval = variant.reference_interval.resize(sequence_length)
+
+# Additonal settings
+
+variant_scores = dna_model.score_variant(
+        interval=interval,
+        variant=variant,
+        variant_scorers=list(variant_scorers.RECOMMENDED_VARIANT_SCORERS.values()),
+        )
+
+df_scores = variant_scorers.tidy_scores(variant_scores)
+
+download_predictions = True
+if download_predictions:
+    df_scores.to_csv(f'chr11_DEAF1_DEL_scores.csv', index=False)
+
+columns = [
+        c for c in df_scores.columns if c not in ['variant_id', 'scored_intervals']
+        ]
+#print(df_scores[columns])
+
+
+print('\n ---- Visualize Variant Effects ---- \n')
+
+# Specify list of cell and tissue ontologies
+
+# Since I don't know a single thing about what I would select here,
+# I asked Gemini what cell types I should use given the sample phenotype / gene I'm looking at.
+
+# It output Ontology CURIE, and I double checked them from the documentation: https://www.alphagenomedocs.com/colabs/tissue_ontology_mapping.html
+
+# OG_ontology_terms = ['UBERON:0002037', 'UBERON:0000955', 'UBERON:0001873'] # Cerebellum, Brain, Caudate Nucleus
+ontology_terms = ['CL:0002551', 'CL:0002553', 'CL:0002547', 'CL:1001608']
+plot_gene_annotation = True
+plot_longest_transcript_only = True
+
+# Output types to plot:
+# There are 13 different output options - each have their own scoring and interpretation
+# https://www.alphagenomedocs.com/exploring_model_metadata.html
+
+
+plot_rna_seq = True # Could be useful if CAGE shows something
+plot_cage = True
+plot_atac = False
+plot_dnase = False
+plot_chip_histone = False
+plot_chip_tf = False
+plot_splice_sites = False
+plot_splice_site_usage = False
+plot_contact_maps = False
+plot_splice_junctions = False
+
+
+# Options to filter tracks to only a specific DNA strand
+## DEAF1 IS ON THE NEGATIVE STRAND
+filter_to_positive_strand = False
+filter_to_negative_strand = True
+
+if filter_to_positive_strand and filter_to_negative_strand:
+    raise ValueError(
+            'Cannot specify both filter_to_positive_strand and '
+            'filter_to_negative strand.'
+            )
+
+# Other visualization options:
+ref_color = 'blue'
+alt_color = 'red'
+ref_alt_colors = {'REF': ref_color, 'ALT': alt_color}
+plot_interval_width = 43008
+plot_interval_shift = 0
+
+# Load gene annotation
+if organism in _transcript_extractor_cache:
+    transcript_extractor, longest_transcript_extractor = (
+            _transcript_extractor_cache[organism]
+            )
+else:
+    match organism:
+        case dna_client.Organism.HOMO_SAPIENS:
+            gtf_path = HG38_GTF_FEATHER
+        case _:
+            raise ValueError(f'Unsupported organism: {organism}')
+
+    gtf = pd.read_feather(gtf_path)
+    
+    # Filter to protein-coding genes and highly supported transcripts
+    gtf_transcript = gene_annotation.filter_transcript_support_level(
+            gene_annotation.filter_protein_coding(gtf), ['1']
+            )
+    
+    # Extractor for identifying transcripts in the region
+    transcript_extractor = transcript.TranscriptExtractor(gtf_transcript)
+    
+    # Also define an extractor that fetches only the longest transcript gene.
+    gtf_longest_transcript = gene_annotation.filter_to_longest_transcript(
+            gtf_transcript
+            )
+    
+    longest_transcript_extractor = transcript.TranscriptExtractor(
+            gtf_longest_transcript
+            )
+    _transcript_extractor_cache[organism] = (
+            transcript_extractor,
+            longest_transcript_extractor
+            )
+
+def _predict_variant_cached(
+    interval, variant, organism, requested_outputs, ontology_terms
+):
+  """Cache wrapper of dna_model.predict_variant."""
+  # Create a unique key from the function arguments.
+  cache_key = (
+      str(interval),
+      str(variant),
+      str(organism),
+      tuple(requested_outputs),
+      tuple(ontology_terms),
+  )
+
+  # Check if the result is already in the cache.
+  if cache_key in _prediction_cache:
+    return _prediction_cache[cache_key]
+
+  # If not, compute the prediction and store it in the cache.
+  result = dna_model.predict_variant(
+      interval=interval,
+      variant=variant,
+      organism=organism,
+      requested_outputs=requested_outputs,
+      ontology_terms=ontology_terms,
+  )
+  _prediction_cache[cache_key] = result
+  return result
+
+output = _predict_variant_cached(
+        interval = interval,
+        variant = variant,
+        organism = organism,
+        requested_outputs = [*dna_client.OutputType],
+        ontology_terms = ontology_terms,
+        )
+
+# Filter to DNA strand if requested
+ref, alt = output.reference, output.alternate
+
+if filter_to_positive_strand:
+    ref = ref.filter_to_strand(strand = "+")
+    alt = alt.filter_to_strand(strand = "+")
+elif filter_to_negative_strand:
+    ref = ref.filter_to_strand(strand='-')
+    alt = alt.filter_to_strand(strand='-')
+
+
+# Build plot.
+components = []
+
+# Gene and transcript annotation
+if plot_gene_annotation:
+    if plot_longest_transcript_only:
+        transcripts = longest_transcript_extractor.extract(interval)
+    else:
+        transcripts = transcript_extractor.extract(interval)
+    components.append(plot_components.TranscriptAnnotation(transcripts))
+
+
+# Individual output type plots.
+plot_map = {
+        'plot_atac': (ref.atac, alt.atac, 'ATAC'),
+        'plot_cage': (ref.cage, alt.cage, 'CAGE'),
+        'plot_chip_histone': (ref.chip_histone, alt.chip_histone, 'CHIP_HISTONE'),
+        'plot_chip_tf': (ref.chip_tf, alt.chip_tf, 'CHIP_TF'),
+        'plot_contact_maps': (ref.contact_maps, alt.contact_maps, 'CONTACT_MAPS'),
+        'plot_dnase': (ref.dnase, alt.dnase, 'DNASE'),
+        'plot_rna_seq': (ref.rna_seq, alt.rna_seq, 'RNA_SEQ'),
+        'plot_splice_junctions': (
+            ref.splice_junctions,
+            alt.splice_junctions,
+            'SPLICE_JUNCTIONS',
+        ),
+        'plot_splice_sites': (ref.splice_sites, alt.splice_sites, 'SPLICE_SITES'),
+        'plot_splice_site_usage': (
+            ref.splice_site_usage,
+            alt.splice_site_usage,
+            'SPLICE_SITE_USAGE',
+    ),
+}
+
+for key, (ref_data, alt_data, output_type) in plot_map.items():
+  if eval(key) and ref_data is not None and ref_data.values.shape[-1] == 0:
+    print(
+        f'Requested plot for output {output_type} but no tracks exist in'
+        ' output. This is likely because this output does not exist for your'
+        ' ontologies or requested DNA strand.'
+    )
+  if eval(key) and ref_data and alt_data:
+    match output_type:
+      case 'CHIP_HISTONE':
+        ylabel_template = (
+            f'{output_type}: {{biosample_name}} ({{strand}})\n{{histone_mark}}'
+        )
+      case 'CHIP_TF':
+        ylabel_template = (
+            f'{output_type}: {{biosample_name}}'
+            ' ({strand})\n{transcription_factor}'
+        )
+      case 'CONTACT_MAPS':
+        ylabel_template = f'{output_type}: {{biosample_name}} ({{strand}})'
+      case 'SPLICE_SITES':
+        ylabel_template = f'{output_type}: {{name}} ({{strand}})'
+      case _:
+        ylabel_template = (
+            f'{output_type}: {{biosample_name}} ({{strand}})\n{{name}}'
+        )
+
+    if output_type == 'CONTACT_MAPS':
+      component = plot_components.ContactMapsDiff(
+          tdata=alt_data - ref_data,
+          ylabel_template=ylabel_template,
+      )
+      components.append(component)
+    elif output_type == 'SPLICE_JUNCTIONS':
+      ref_plot = plot_components.Sashimi(
+          ref_data,
+          ylabel_template='REF: ' + ylabel_template,
+      )
+      alt_plot = plot_components.Sashimi(
+          alt_data,
+          ylabel_template='ALT: ' + ylabel_template,
+      )
+      components.extend([ref_plot, alt_plot])
+    else:
+      component = plot_components.OverlaidTracks(
+          tdata={'REF': ref_data, 'ALT': alt_data},
+          colors=ref_alt_colors,
+          ylabel_template=ylabel_template,
+          alpha = 0.6 #ADDED FOR TRANSPARENCY
+      )
+      components.append(component)
+
+if plot_interval_width > interval.width:
+  raise ValueError(
+      f'plot_interval_width ({plot_interval_width}) must be less than '
+      f'interval.width ({interval.width}).'
+  )
+
+plot = plot_components.plot(
+    components=components,
+    interval=interval.shift(plot_interval_shift).resize(plot_interval_width),
+    annotations=[
+        plot_components.VariantAnnotation([variant]),
+    ],
+)
+
+plot.savefig('COL5A1_variant_plot.png')
+
+{% endhighlight %}
