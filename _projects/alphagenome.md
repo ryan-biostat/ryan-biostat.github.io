@@ -5,7 +5,7 @@ description: investigating Google's newest tool that predicts how genetic mutati
 img: assets/img/alpha_genome.jpg
 importance: 4
 category: Bioinformatics
-related_publications: true
+related_publications: false
 ---
 
 #### **About**
