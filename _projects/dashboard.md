@@ -9,9 +9,9 @@ category: Biostatistics
 
 #### **About**
 
-For the sake of lab communication, we needed a process that communicated which samples had been processed for Long-Read Sequencing (LRS) (see [LRS Pipeline](Ryan-biostat.github.io/projects/ONT_pipeline/)).  My thought was that an easily accessible, browser-based dashboard so anyone in the lab could quickly check sample status without digging through files or logs. The only problem was that I hadn't had much familiarity (or licensing) with tools that would create dashboards.  I also didn't have the expertise to design one from scratch or host it locally. 
+To improve lab communication, we required a process to track samples processed for Long-Read Sequencing (LRS) (see [LRS Pipeline](Ryan-biostat.github.io/projects/ONT_pipeline/)).  My thought was that an easily accessible, browser-based dashboard so anyone in the lab could quickly check sample status without digging through files or logs. The only problem was that I hadn't had much familiarity with tools that would create dashboards.  I also didn't have the expertise to design one from scratch or host it locally. 
 
-This presented a unique opportunity to try coding in a new language with heavy support from an LLM. With heavy support from Google Gemini, I built a Vite + React dashboard that pulls data via APIs and Python scripts to retrieve, clean, and format the underlying data. The result is a friendly, easily-navigable  dashboard that communicates LRS processing that give me hands-on experience with webpage development and LLM-assisted coding.
+This presented a unique opportunity to learn a new language through AI-assisted development. With heavy support from Google Gemini, I built a Vite + React dashboard that pulls data via APIs and Python scripts to retrieve, clean, and format the underlying data. The result is a friendly, easily-navigable dashboard that communicates LRS processing that give me hands-on experience with webpage development and LLM-assisted coding.
 
 ## **Purpose**
 
