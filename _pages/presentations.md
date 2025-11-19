@@ -6,3 +6,10 @@ description: presentations by categories in reversed chronological order. genera
 nav: true
 nav_order: 5
 ---
+
+
+<div class="publications">
+
+{% bibliography --file presentations %}
+
+</div>
