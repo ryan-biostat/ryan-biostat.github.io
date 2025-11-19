@@ -167,7 +167,11 @@
       {% capture entryyear %}{{ " " }}{{ entry.year }}{% endcapture %}
     {% endif %}
     {% if entry.location %}
-      {% capture entrytype %}{{ entrytype }}{{ ", " }}{{ entry.location }}{% endcapture %}
+      {% if entrytype != "" %}
+        {% capture entrytype %}{{ entrytype }}{{ ", " }}{{ entry.location }}{% endcapture %}
+      {% else %}
+        {% capture entrytype %}{{ entry.location }}{% endcapture %}
+      {% endif %}
     {% endif -%}
     {% if entry.additional_info %}
       {% capture entrytype %}{{ entrytype }}{{ entry.additional_info | markdownify | remove: '<p>' | remove: '</p>' }}{% endcapture %}
