@@ -20,6 +20,16 @@ nav_order: 5
 
 <div class="row mt-3">
     <div class="col-sm-12">
-        <embed src="{{ '/assets/pdf/my_poster.pdf' | relative_url }}" type="assets/pdf/MCW-UIC_DMD-Case_Poster.pdf" width="100%" height="800px" />
+        <a href="{{ '/assets/pdf/MCW-UIC_DMD-Case_Poster.pdf' | relative_url }}" target="_blank">
+            
+            <img src="{{ '/assets/img/DMD_poster.jpg' | relative_url }}" 
+                 class="img-fluid rounded z-depth-1" 
+                 alt="Poster Preview" 
+                 style="width:100%">
+        </a>
+        
+        <div class="caption">
+            Click the image to view the full PDF
+        </div>
     </div>
 </div>
