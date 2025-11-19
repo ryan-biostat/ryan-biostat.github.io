@@ -5,7 +5,7 @@ permalink: /projects/
 description: A growing collection of projects in Biostatistics & Bioinformatics.
 nav: true
 nav_order: 1
-display_categories: [Biostatistics, Bioinformatics]
+display_categories: [-]
 horizontal: false
 ---
 

@@ -3,8 +3,8 @@ layout: page
 title: CAP Lab Instrument QC Report
 description: statistical reporting via RMarkdown for measuring instrument performance
 img: /assets/img/lab_report.png
-importance: 3
-category: Biostatistics
+importance: 4
+category: -
 ---
 
 #### **About**

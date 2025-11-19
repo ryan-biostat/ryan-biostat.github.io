@@ -3,8 +3,8 @@ layout: page
 title: Hybrid Genome Assembly Pipeline
 description: combining ONT Long-Read Sequencing and Bionano Optical Genome Mapping for highly contiguous whole genome assemblies.
 img: assets/img/dna_background.jpg
-importance: 2
-category: Bioinformatics
+importance: 3
+category: -
 giscus_comments: false
 ---
 

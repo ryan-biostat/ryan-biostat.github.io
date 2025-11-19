@@ -3,8 +3,8 @@ layout: page
 title: Differential Expression Analysis
 description: for drug discovery using DESeq2 in R
 img: assets/img/deseq2_maplot.png
-importance: 1
-category: Biostatistics
+importance: 2
+category: -
 ---
 
 #### **About**
