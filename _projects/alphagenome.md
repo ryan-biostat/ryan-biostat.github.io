@@ -4,7 +4,7 @@ title: Learning AlphaGenome
 description: investigating Google's newest tool that predicts how genetic mutations in DNA affect gene regulation and other biological processes
 img: assets/img/alpha_genome.jpg
 importance: 7
-category: -
+category: MCW
 related_publications: false
 ---
 

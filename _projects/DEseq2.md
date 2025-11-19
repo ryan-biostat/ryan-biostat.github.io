@@ -4,7 +4,7 @@ title: Differential Expression Analysis
 description: for drug discovery using DESeq2 in R
 img: assets/img/deseq2_maplot.png
 importance: 2
-category: -
+category: MCW
 ---
 
 #### **About**

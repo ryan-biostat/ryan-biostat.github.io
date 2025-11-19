@@ -4,7 +4,7 @@ title: Lab Sample Dashboard
 description: a Python + JavaScript dashboard for tracking whole genome samples as they process from lab to analysis
 img: assets/img/charts.jpg
 importance: 6
-category: -
+category: MCW
 ---
 
 #### **About**
