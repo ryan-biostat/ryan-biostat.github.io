@@ -61,12 +61,14 @@
   inspirehep_id = {3255}
 }
 
-@article{gallagher2025,
-  title={Optical Genome Mapping and Long Read Sequencing Identifies a Novel Dystrophin Gene
-Inversion in a Patient with Duchenne Muscular Dystrophy},
-  author={Ryan Gallagher, Alexya Aguilera, Sara Acosta Villarreal, Alice Zalan, Jared Tomei, Dima Alghazzy, Samantha Scott, Nykula Slack, Andrea Matter, Ulrich Broeckel, Philip Giampietro},
-  journal={American Journal of Medical Genetics Part A},
-  year={Submitted November 2025},
+@article{einstein1905molekularkinetischen,
+  title={{\"U}ber die von der molekularkinetischen Theorie der W{\"a}rme geforderte Bewegung von in ruhenden Fl{\"u}ssigkeiten suspendierten Teilchen},
+  author={Einstein, A.},
+  journal={Annalen der physik},
+  volume={322},
+  number={8},
+  pages={549--560},
+  year={1905},
   publisher={Wiley Online Library}
 }
 
