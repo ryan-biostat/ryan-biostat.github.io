@@ -13,3 +13,13 @@ nav_order: 5
 {% bibliography --file presentations %}
 
 </div>
+
+
+<hr>
+<h3>Featured Poster</h3>
+
+<div class="row mt-3">
+    <div class="col-sm-12">
+        <embed src="{{ '/assets/pdf/my_poster.pdf' | relative_url }}" type="assets/pdf/MCW-UIC_DMD-Case_Poster.pdf" width="100%" height="800px" />
+    </div>
+</div>
