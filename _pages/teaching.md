@@ -31,12 +31,12 @@ nav_order: 3
         <tr>
           <td class="pl-4">Intro & Syllabus</td>
           <td class="text-right pr-4">
-          	<a href="assets/pdf/HI_743___Intro" class="badge bg-primary">slides</a>
-            <a href="assets/pdf/HI 743_Predictive Analytics for Healthcare_ Syllabus_Jan22_2025" class="badge bg-success">syllabus</a>
+          	<a href="https://github.com/ryan-biostat/HI-743/blob/main/HI%20743%20-%20Intro/HI_743___Intro.pdf" badge bg-primary">slides</a>
+            <a href="https://github.com/ryan-biostat/HI-743/blob/main/HI%20743_Predictive%20Analytics%20for%20Healthcare_%20Syllabus_Jan22_2025.pdf" class="badge bg-success">syllabus</a>
           </td>
         </tr>
         <tr>
-          <td class="pl-4">Lecture Slides (Part 2)</td>
+          <td class="pl-4">Full Lecture Slides</td>
           <td class="text-right pr-4">
             <a href="https://github.com/ryan-biostat/HI-743/tree/main" class="badge bg-primary">GitHub</a>
           </td>
