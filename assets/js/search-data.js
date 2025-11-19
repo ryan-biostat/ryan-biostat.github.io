@@ -30,19 +30,19 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "nav-publications",
-          title: "publications",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/publications/";
-          },
         },{id: "nav-presentations",
           title: "presentations",
           description: "academic presentations in reversed chronological order.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/presentations/";
+          },
+        },{id: "nav-publications",
+          title: "publications",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/publications/";
           },
         },{id: "post-a-post-with-plotly-js",
         
@@ -433,39 +433,39 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-cap-lab-instrument-qc-report",
+          title: 'CAP Lab Instrument QC Report',
+          description: "statistical reporting via RMarkdown for measuring instrument performance",
           section: "Projects",handler: () => {
               window.location.href = "/projects/CAP-Reporting/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-differential-expression-analysis",
+          title: 'Differential Expression Analysis',
+          description: "for drug discovery using DESeq2 in R",
           section: "Projects",handler: () => {
               window.location.href = "/projects/DEseq2/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-hybrid-genome-assembly-pipeline",
+          title: 'Hybrid Genome Assembly Pipeline',
+          description: "combining ONT Long-Read Sequencing and Bionano Optical Genome Mapping for highly contiguous whole genome assemblies.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/Hybrid/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-long-read-sequencing-pipeline",
+          title: 'Long-Read Sequencing Pipeline',
+          description: "customized for Whole Genomes on Oxford Nanopore Long-Read Platforms",
           section: "Projects",handler: () => {
               window.location.href = "/projects/ONT_pipeline/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-emr-data-for-pediatric-research",
+          title: 'EMR Data for Pediatric Research',
+          description: "investigating health disparities among children with Sickle Cell Disease",
           section: "Projects",handler: () => {
               window.location.href = "/projects/SCD/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-learning-alphagenome",
+          title: 'Learning AlphaGenome',
+          description: "investigating Google&#39;s newest tool that predicts how genetic mutations in DNA affect gene regulation and other biological processes",
           section: "Projects",handler: () => {
               window.location.href = "/projects/alphagenome/";
-            },},{id: "projects-",
-          title: '',
-          description: "",
+            },},{id: "projects-lab-sample-dashboard",
+          title: 'Lab Sample Dashboard',
+          description: "a Python + JavaScript dashboard for tracking whole genome samples as they process from lab to analysis",
           section: "Projects",handler: () => {
               window.location.href = "/projects/dashboard/";
             },},{
