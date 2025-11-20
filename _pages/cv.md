@@ -1,6 +1,6 @@
 ---
 layout: cv
-permalink: https://github.com/ryan-biostat/ryan-biostat.github.io/tree/main/assets/pdf/RG_CV_11082025.pdf
+permalink: https://github.com/ryan-biostat/cv/blob/main/RG_CV_11082025.pdf
 title: cv
 nav: true
 nav_order: 2
